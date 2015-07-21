@@ -1,6 +1,7 @@
 package com.skplanet.tutorial.testautomation.formatter;
 
 import static org.junit.Assert.assertEquals;
+
 //2.junit단언문
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
@@ -13,6 +14,9 @@ import org.junit.Before;
 //1.test method
 import org.junit.Test;
 
+
+//3.
+import static org.hamcrest.CoreMatchers.*;
 
 public class FormatterTest_JUnit {
 
@@ -33,8 +37,8 @@ public class FormatterTest_JUnit {
 	@Test
     public void 인자없이_생성_가능() 
     {
-        Formatter target = new Formatter();
-        assertNotNull(target);
+		//hamcrest
+        assertThat(target, is(notNullValue()));
     }
     
 	@Test
